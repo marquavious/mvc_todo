@@ -45,6 +45,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="501296867.645172">
                                     <!--2016-11-20 01:07:47 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="jPq-nc-ozT"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju3-8j-HZM">
                                 <rect key="frame" x="111" y="508" width="34" height="30"/>
@@ -73,6 +76,10 @@
                             <constraint firstItem="hZQ-Iy-HRz" firstAttribute="top" secondItem="iyE-dO-86s" secondAttribute="bottom" constant="19" id="zBM-23-6Db"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="kcO-sd-ggx" id="NDq-5r-3RT"/>
+                        <outlet property="newTodoTextField" destination="hZQ-Iy-HRz" id="pYR-zC-gfx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

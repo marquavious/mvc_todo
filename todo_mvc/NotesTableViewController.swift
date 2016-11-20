@@ -16,13 +16,14 @@ class NotesTableViewController: UITableViewController {
         ToDo(taskTitle: "Clean Up Room", taskDeadline: "10/13/2016", finishedState: .finished)
     ]
     
-    // MARK: View did load
+    // MARK: ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // MARK: Tabel View Funtions
+    // MARK: TableView Funtions
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return toDos.count
     }
@@ -33,6 +34,7 @@ class NotesTableViewController: UITableViewController {
         cell.todo = toDos[indexPath.row]
         let todosForTableView = toDos[indexPath.row]
         cell.toDoTextLabel.text = todosForTableView.taskTitle
+        
         if todosForTableView.finishedState == .finished {
             cell.deadlineLabel.text = todosForTableView.finishedSentence
             cell.deadlineLabel.textColor = UIColor.green
@@ -46,9 +48,10 @@ class NotesTableViewController: UITableViewController {
         default:
             cell.verificationButton.setTitle(ToDo.finishedState.finished.rawValue, for: .normal)
         }
-        
         return cell
     }
+    
+    // MARK: Extra functions
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showTodo" {
@@ -57,14 +60,20 @@ class NotesTableViewController: UITableViewController {
             let toDo = toDos[(indexpath?.row)!]
             destinaiton.todo = toDo
             destinaiton.viewControler = self
-            
         }
+    }
+    
+    func changeFinishedState(){
+        //MARK: add functions here that allow user to change the mood by tapping the picture in the cell
+        
+        //checks for the currant state of the todo objecet and chages it to the oppisite when tapped
         
     }
-    func changeFinishedState(){
-        print("what the duck")
-        let toDo = toDos[(IndexPath?.row)!]
+    
+    func addNewTodo(){
+        
     }
+    
     func reloadData() {
         tableView.reloadData()
     }
