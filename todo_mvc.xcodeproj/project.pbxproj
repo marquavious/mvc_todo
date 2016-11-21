@@ -64,24 +64,16 @@
 			children = (
 				C08CB8DD1DE12E0200DCB88B /* AppDelegate.swift */,
 				C08CB8DF1DE12E0200DCB88B /* CreateTodoViewController.swift */,
-				C08CB8F51DE135EF00DCB88B /* Models */,
 				C08CB8EF1DE1327F00DCB88B /* NotesTableViewController.swift */,
+				C08CB8F61DE1360C00DCB88B /* ToDo.swift */,
 				C08CB8F11DE132E500DCB88B /* NoteTableViewCell.swift */,
-				C08CB8E11DE12E0200DCB88B /* Main.storyboard */,
 				C08CB8F31DE1347E00DCB88B /* TodoViewController.swift */,
-				C08CB8E41DE12E0200DCB88B /* Assets.xcassets */,
+				C08CB8E11DE12E0200DCB88B /* Main.storyboard */,
 				C08CB8E61DE12E0200DCB88B /* LaunchScreen.storyboard */,
+				C08CB8E41DE12E0200DCB88B /* Assets.xcassets */,
 				C08CB8E91DE12E0200DCB88B /* Info.plist */,
 			);
 			path = todo_mvc;
-			sourceTree = "<group>";
-		};
-		C08CB8F51DE135EF00DCB88B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C08CB8F61DE1360C00DCB88B /* ToDo.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +316,7 @@
 				C08CB8EE1DE12E0200DCB88B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

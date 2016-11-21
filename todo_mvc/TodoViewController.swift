@@ -9,13 +9,24 @@
 import UIKit
 
 class TodoViewController: UIViewController {
+    
     var todo:ToDo?
     var viewControler: NotesTableViewController!
     @IBOutlet weak var deadlineTextLabel: UILabel!
     @IBOutlet weak var markAsDoneButton: UIButton!
     
+    @IBAction func deleteToDo(_ sender: Any) {
+        for i in 0..<viewControler.toDos.count {
+            if viewControler.toDos[i].taskTitle == todo?.taskTitle {
+                viewControler.toDos.remove(at: i)
+                print("inside index")
+            } else {
+                print("Outside index")
+            }
+        }
+    }
+    
     @IBAction func markAsDoneAction(_ sender: Any) {
-        
         if todo?.finishedState == .notFinished {
             todo?.finishedState = .finished
         } else {
@@ -23,16 +34,13 @@ class TodoViewController: UIViewController {
         }
         checkForCompletion()
         viewControler.reloadData()
-        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         deadlineTextLabel.text = todo?.taskDeadline
         self.title = todo?.taskTitle
         checkForCompletion()
-        
     }
     
     func checkForCompletion() {
@@ -44,7 +52,6 @@ class TodoViewController: UIViewController {
             markAsDoneButton.setTitle("Mark as Finished\(ToDo.finishedState.finished.rawValue)", for: .normal)
             deadlineTextLabel.text = todo?.taskDeadline
             deadlineTextLabel.textColor = UIColor.red
-
         }
     }
 }

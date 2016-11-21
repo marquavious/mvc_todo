@@ -9,33 +9,26 @@
 import UIKit
 
 class CreateTodoViewController: UIViewController {
-    @IBOutlet weak var newTodoTextField: UITextField!
-
-    @IBAction func datePicked(_ sender: Any) {
-        handler(sender: datePicker)
-    }
     
+    var notesTableViewController: NotesTableViewController!
+    @IBOutlet weak var newTodoTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-         datePicker.addTarget(self, action: Selector("handler:"), for: UIControlEvents.valueChanged)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        presentingViewController?.dismiss(animated: true)
     }
     
-    func handler(sender: UIDatePicker) {
-        var timeFormatter = DateFormatter()
-        timeFormatter.timeStyle = DateFormatter.Style.short
-        
-        var strDate = timeFormatter.string(from: datePicker.date)
-        // do what you want to do with the string.
-        print(strDate)
+    @IBAction func saveToDo(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let strDate = dateFormatter.string(from: datePicker.date)
+        let newToDo = ToDo(taskTitle: newTodoTextField.text!, taskDeadline: strDate, finishedState: .notFinished)
+        notesTableViewController.addNewTodo(todo: newToDo)
+        presentingViewController?.dismiss(animated: true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 }
 

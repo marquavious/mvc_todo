@@ -45,17 +45,20 @@
                                 <date key="date" timeIntervalSinceReferenceDate="501296867.645172">
                                     <!--2016-11-20 01:07:47 +0000-->
                                 </date>
-                                <connections>
-                                    <action selector="datePicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="jPq-nc-ozT"/>
-                                </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju3-8j-HZM">
-                                <rect key="frame" x="111" y="508" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvv-47-nbC">
                                 <rect key="frame" x="229" y="508" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhl-kY-nOh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju3-8j-HZM">
+                                <rect key="frame" x="218" y="87" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveToDo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WbV-e4-y9L"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,27 +66,28 @@
                             <constraint firstItem="hZQ-Iy-HRz" firstAttribute="leading" secondItem="GSt-Ut-rH0" secondAttribute="leading" id="5n3-AP-FVJ"/>
                             <constraint firstItem="iyE-dO-86s" firstAttribute="leading" secondItem="hZQ-Iy-HRz" secondAttribute="leading" id="7ey-CA-OAg"/>
                             <constraint firstItem="iyE-dO-86s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="80C-7g-5dD"/>
-                            <constraint firstItem="ju3-8j-HZM" firstAttribute="top" secondItem="kcO-sd-ggx" secondAttribute="bottom" constant="48" id="9GI-26-TQo"/>
-                            <constraint firstItem="gvv-47-nbC" firstAttribute="leading" secondItem="ju3-8j-HZM" secondAttribute="trailing" constant="84" id="A0e-jU-lB9"/>
+                            <constraint firstItem="ju3-8j-HZM" firstAttribute="top" secondItem="kcO-sd-ggx" secondAttribute="bottom" constant="-373" id="9GI-26-TQo"/>
+                            <constraint firstItem="gvv-47-nbC" firstAttribute="leading" secondItem="ju3-8j-HZM" secondAttribute="trailing" constant="-23" id="A0e-jU-lB9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hZQ-Iy-HRz" secondAttribute="trailing" constant="50" id="Bun-7g-p00"/>
                             <constraint firstItem="iyE-dO-86s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="DUb-sm-uDG"/>
-                            <constraint firstItem="ju3-8j-HZM" firstAttribute="baseline" secondItem="gvv-47-nbC" secondAttribute="baseline" id="KM9-oD-Wgn"/>
+                            <constraint firstItem="ju3-8j-HZM" firstAttribute="baseline" secondItem="gvv-47-nbC" secondAttribute="baseline" constant="-421" id="KM9-oD-Wgn"/>
                             <constraint firstItem="kcO-sd-ggx" firstAttribute="top" secondItem="GSt-Ut-rH0" secondAttribute="bottom" constant="16" id="Y8v-TV-nqn"/>
                             <constraint firstItem="kcO-sd-ggx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bk1-ds-7EO"/>
                             <constraint firstItem="GSt-Ut-rH0" firstAttribute="top" secondItem="hZQ-Iy-HRz" secondAttribute="bottom" constant="52" id="kCF-Mh-BPO"/>
                             <constraint firstAttribute="trailing" secondItem="kcO-sd-ggx" secondAttribute="trailing" id="pw3-wJ-k5o"/>
-                            <constraint firstItem="ju3-8j-HZM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="95" id="s7m-ej-S3k"/>
+                            <constraint firstItem="ju3-8j-HZM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="202" id="s7m-ej-S3k"/>
                             <constraint firstItem="hZQ-Iy-HRz" firstAttribute="top" secondItem="iyE-dO-86s" secondAttribute="bottom" constant="19" id="zBM-23-6Db"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelToDo" destination="gvv-47-nbC" id="beY-gt-Sh4"/>
                         <outlet property="datePicker" destination="kcO-sd-ggx" id="NDq-5r-3RT"/>
                         <outlet property="newTodoTextField" destination="hZQ-Iy-HRz" id="pYR-zC-gfx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2909.5999999999999" y="160.56971514242881"/>
+            <point key="canvasLocation" x="2738" y="261"/>
         </scene>
         <!--Todo View Controller-->
         <scene sceneID="x3C-5m-c4y">
@@ -109,6 +113,9 @@
                                     <constraint firstAttribute="height" constant="30" id="Yhi-8i-T5n"/>
                                 </constraints>
                                 <state key="normal" title="Delete this todo"/>
+                                <connections>
+                                    <action selector="deleteToDo:" destination="4e9-Pi-YHr" eventType="touchUpInside" id="5g0-Mb-DHC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWy-W6-9O7">
                                 <rect key="frame" x="70" y="189" width="234" height="30"/>
@@ -142,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXn-BK-NNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2909.5999999999999" y="811.84407796101959"/>
+            <point key="canvasLocation" x="3113" y="276"/>
         </scene>
         <!--My ToDos-->
         <scene sceneID="PMb-s6-3du">
@@ -201,7 +208,7 @@
                     <navigationItem key="navigationItem" title="My ToDos" id="fup-cq-RhD">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7iY-2K-IcX">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="qd6-Ie-fze"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="createNewToDo" id="qd6-Ie-fze"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -226,7 +233,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ek8-Zy-JLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="-447"/>
+            <point key="canvasLocation" x="1217" y="276"/>
         </scene>
     </scenes>
 </document>

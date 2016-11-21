@@ -30,6 +30,7 @@ class NotesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NoteTableViewCell
+        
         cell.notesTableViewController = self
         cell.todo = toDos[indexPath.row]
         let todosForTableView = toDos[indexPath.row]
@@ -40,6 +41,7 @@ class NotesTableViewController: UITableViewController {
             cell.deadlineLabel.textColor = UIColor.green
         } else {
             cell.deadlineLabel.text = todosForTableView.taskDeadline
+            cell.deadlineLabel.textColor = UIColor.red
         }
         
         switch todosForTableView.finishedState {
@@ -51,7 +53,7 @@ class NotesTableViewController: UITableViewController {
         return cell
     }
     
-    // MARK: Extra functions
+    // MARK: Prepare for segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showTodo" {
@@ -60,21 +62,35 @@ class NotesTableViewController: UITableViewController {
             let toDo = toDos[(indexpath?.row)!]
             destinaiton.todo = toDo
             destinaiton.viewControler = self
+        } else {
+            let destinaiton = segue.destination as! CreateTodoViewController
+            destinaiton.notesTableViewController = self
         }
     }
     
-    func changeFinishedState(){
-        //MARK: add functions here that allow user to change the mood by tapping the picture in the cell
-        
-        //checks for the currant state of the todo objecet and chages it to the oppisite when tapped
-        
+    // MARK: View controller states
+    
+    func changeFinishedState(toDo: ToDo){
+        switch toDo.finishedState {
+        case .finished :
+            toDo.finishedState = .notFinished
+            tableView.reloadData()
+        case .notFinished :
+            toDo.finishedState = .finished
+            tableView.reloadData()
+        }
     }
     
-    func addNewTodo(){
-        
+    func addNewTodo(todo:ToDo) {
+        toDos.append(todo)
+        tableView.reloadData()
     }
     
     func reloadData() {
         tableView.reloadData()
+    }
+    
+    func deleteTodo(todo:ToDo, index: Int){
+        toDos.remove(at: index)
     }
 }
