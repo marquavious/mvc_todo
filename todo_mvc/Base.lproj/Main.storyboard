@@ -23,71 +23,70 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyE-dO-86s">
-                                <rect key="frame" x="52" y="85" width="34" height="21"/>
+                                <rect key="frame" x="52" y="41" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZQ-Iy-HRz">
-                                <rect key="frame" x="52" y="125" width="257" height="30"/>
+                                <rect key="frame" x="52" y="81" width="257" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dead Line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSt-Ut-rH0">
-                                <rect key="frame" x="52" y="207" width="77" height="21"/>
+                                <rect key="frame" x="52" y="163" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kcO-sd-ggx">
-                                <rect key="frame" x="0.0" y="244" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="501296867.645172">
                                     <!--2016-11-20 01:07:47 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvv-47-nbC">
-                                <rect key="frame" x="229" y="508" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhl-kY-nOh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ju3-8j-HZM">
-                                <rect key="frame" x="218" y="87" width="34" height="30"/>
+                                <rect key="frame" x="163" y="37" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveToDo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WbV-e4-y9L"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvv-47-nbC">
+                                <rect key="frame" x="261" y="37" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhl-kY-nOh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hZQ-Iy-HRz" firstAttribute="leading" secondItem="GSt-Ut-rH0" secondAttribute="leading" id="5n3-AP-FVJ"/>
-                            <constraint firstItem="iyE-dO-86s" firstAttribute="leading" secondItem="hZQ-Iy-HRz" secondAttribute="leading" id="7ey-CA-OAg"/>
-                            <constraint firstItem="iyE-dO-86s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="80C-7g-5dD"/>
-                            <constraint firstItem="ju3-8j-HZM" firstAttribute="top" secondItem="kcO-sd-ggx" secondAttribute="bottom" constant="-373" id="9GI-26-TQo"/>
-                            <constraint firstItem="gvv-47-nbC" firstAttribute="leading" secondItem="ju3-8j-HZM" secondAttribute="trailing" constant="-23" id="A0e-jU-lB9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hZQ-Iy-HRz" secondAttribute="trailing" constant="50" id="Bun-7g-p00"/>
-                            <constraint firstItem="iyE-dO-86s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="DUb-sm-uDG"/>
-                            <constraint firstItem="ju3-8j-HZM" firstAttribute="baseline" secondItem="gvv-47-nbC" secondAttribute="baseline" constant="-421" id="KM9-oD-Wgn"/>
-                            <constraint firstItem="kcO-sd-ggx" firstAttribute="top" secondItem="GSt-Ut-rH0" secondAttribute="bottom" constant="16" id="Y8v-TV-nqn"/>
-                            <constraint firstItem="kcO-sd-ggx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bk1-ds-7EO"/>
-                            <constraint firstItem="GSt-Ut-rH0" firstAttribute="top" secondItem="hZQ-Iy-HRz" secondAttribute="bottom" constant="52" id="kCF-Mh-BPO"/>
-                            <constraint firstAttribute="trailing" secondItem="kcO-sd-ggx" secondAttribute="trailing" id="pw3-wJ-k5o"/>
-                            <constraint firstItem="ju3-8j-HZM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="202" id="s7m-ej-S3k"/>
-                            <constraint firstItem="hZQ-Iy-HRz" firstAttribute="top" secondItem="iyE-dO-86s" secondAttribute="bottom" constant="19" id="zBM-23-6Db"/>
+                            <constraint firstItem="hZQ-Iy-HRz" firstAttribute="top" secondItem="ju3-8j-HZM" secondAttribute="bottom" constant="14" id="7eu-si-NpN"/>
+                            <constraint firstItem="iyE-dO-86s" firstAttribute="baseline" secondItem="ju3-8j-HZM" secondAttribute="baseline" id="Fpr-XK-6EC"/>
+                            <constraint firstItem="iyE-dO-86s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="MuX-ch-cZ8"/>
+                            <constraint firstItem="ju3-8j-HZM" firstAttribute="centerX" secondItem="hZQ-Iy-HRz" secondAttribute="centerX" id="PYC-1X-guo"/>
+                            <constraint firstItem="ju3-8j-HZM" firstAttribute="baseline" secondItem="gvv-47-nbC" secondAttribute="baseline" id="UIh-dp-8eS"/>
+                            <constraint firstItem="gvv-47-nbC" firstAttribute="trailing" secondItem="hZQ-Iy-HRz" secondAttribute="trailing" id="Vok-5r-R8C"/>
+                            <constraint firstAttribute="trailing" secondItem="kcO-sd-ggx" secondAttribute="trailing" id="ZpU-nJ-bPS"/>
+                            <constraint firstItem="ju3-8j-HZM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="aUY-eA-cs4"/>
+                            <constraint firstItem="kcO-sd-ggx" firstAttribute="top" secondItem="GSt-Ut-rH0" secondAttribute="bottom" constant="16" id="cO6-Bm-njv"/>
+                            <constraint firstItem="GSt-Ut-rH0" firstAttribute="top" secondItem="hZQ-Iy-HRz" secondAttribute="bottom" constant="52" id="odX-Pz-bv2"/>
+                            <constraint firstItem="gvv-47-nbC" firstAttribute="leading" secondItem="ju3-8j-HZM" secondAttribute="trailing" constant="64" id="oju-ot-1ZT"/>
+                            <constraint firstItem="iyE-dO-86s" firstAttribute="leading" secondItem="hZQ-Iy-HRz" secondAttribute="leading" id="qXQ-vw-Aog"/>
+                            <constraint firstItem="kcO-sd-ggx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sT2-mq-4kl"/>
+                            <constraint firstItem="hZQ-Iy-HRz" firstAttribute="leading" secondItem="GSt-Ut-rH0" secondAttribute="leading" id="xsj-N1-2tN"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cancelToDo" destination="gvv-47-nbC" id="beY-gt-Sh4"/>
                         <outlet property="datePicker" destination="kcO-sd-ggx" id="NDq-5r-3RT"/>
                         <outlet property="newTodoTextField" destination="hZQ-Iy-HRz" id="pYR-zC-gfx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2738" y="261"/>
+            <point key="canvasLocation" x="2666" y="152"/>
         </scene>
         <!--Todo View Controller-->
         <scene sceneID="x3C-5m-c4y">
@@ -122,7 +121,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Der-NW-39E"/>
                                 </constraints>
-                                <state key="normal" title="Mark as Done ✅"/>
+                                <state key="normal" title="Mark as Done  ✅"/>
                                 <connections>
                                     <action selector="markAsDoneAction:" destination="4e9-Pi-YHr" eventType="touchUpInside" id="HOi-Ud-GOl"/>
                                 </connections>

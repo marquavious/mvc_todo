@@ -19,9 +19,8 @@ class TodoViewController: UIViewController {
         for i in 0..<viewControler.toDos.count {
             if viewControler.toDos[i].taskTitle == todo?.taskTitle {
                 viewControler.toDos.remove(at: i)
-                print("inside index")
-            } else {
-                print("Outside index")
+                viewControler.reloadData()
+                return
             }
         }
     }
@@ -45,11 +44,11 @@ class TodoViewController: UIViewController {
     
     func checkForCompletion() {
         if todo?.finishedState == .finished {
-            markAsDoneButton.setTitle("Mark as UnFinished\(ToDo.finishedState.notFinished.rawValue)", for: .normal)
+            markAsDoneButton.setTitle("Mark as Unfinished \(ToDo.finishedState.notFinished.rawValue)", for: .normal)
             deadlineTextLabel.text = todo?.finishedSentence
             deadlineTextLabel.textColor = UIColor.green
         } else {
-            markAsDoneButton.setTitle("Mark as Finished\(ToDo.finishedState.finished.rawValue)", for: .normal)
+            markAsDoneButton.setTitle("Mark as Finished \(ToDo.finishedState.finished.rawValue)", for: .normal)
             deadlineTextLabel.text = todo?.taskDeadline
             deadlineTextLabel.textColor = UIColor.red
         }
